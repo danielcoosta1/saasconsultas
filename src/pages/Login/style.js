@@ -11,7 +11,6 @@ export const ContainerPrincipal = styled.section`
 `;
 
 export const ContainerForm = styled.div`
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,14 +40,59 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
+export const ContainerBt = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const ButtonLogin = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  border: none;
+  border-radius: 8px;
+  padding: ${({ theme }) => theme.spacing.small};
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
+export const Divider = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: ${({ theme }) => theme.spacing.large} 0;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border || "#ccc"};
+  }
+
+  &::before {
+    margin-right: 0.5em;
+  }
+
+  &::after {
+    margin-left: 0.5em;
+  }
+`;
+
 export const Input = styled.input`
   padding: ${({ theme }) => theme.spacing.medium};
-  border: 1px solid #ddd;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.inputs};
   border-radius: 4px;
   font-size: 14px;
 `;
 
-export const Button = styled.button`
+export const ButtonSubmit = styled.button`
   padding: ${({ theme }) => theme.spacing.medium};
   background-color: ${({ theme }) => theme.colors.primary};
   color: #fff;
