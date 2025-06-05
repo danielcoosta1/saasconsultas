@@ -8,8 +8,8 @@ export const theme = {
     inputs: "#F7F7F8", // Cor padrão para textos
   },
   fonts: {
-    heading: '"Montserrat", sans-serif',
-    body: '"Roboto", sans-serif',
+    heading: '"Raleway", sans-serif',
+    body: '"Raleway", sans-serif',
   },
   spacing: {
     small: "8px",
