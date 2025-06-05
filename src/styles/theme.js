@@ -16,4 +16,4 @@ export const theme = {
     large: '24px',
   },
   // Outros tokens de design podem ser adicionados aqui.
-};
+}; 
