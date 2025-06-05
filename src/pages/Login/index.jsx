@@ -13,6 +13,8 @@ import {
   LabelEstilizada,
   IconeSenha,
   InputContainer,
+  ContainerNewAccount,
+  ContainerRememberMe,
 } from "./style";
 
 import loginImg from "../../assets/login.png";
@@ -23,6 +25,7 @@ import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -62,7 +65,7 @@ const Login = () => {
             <Input
               type="email"
               id="email"
-              placeholder="Digite seu email"
+              placeholder="example@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -73,7 +76,7 @@ const Login = () => {
               <Input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                placeholder="Digite sua senha"
+                placeholder="******"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />
@@ -82,10 +85,21 @@ const Login = () => {
               </IconeSenha>
             </InputContainer>
           </CampoInput>
+          <ContainerRememberMe>
+            <div>
+              <input type="checkbox" id="remember-me" />
+              <label htmlFor="remember-me">Remember Me</label>
+            </div>
+            <Link to="/recover">Reset Password</Link>
+          </ContainerRememberMe>
 
           {erro && <p style={{ color: "red" }}>{erro}</p>}
           <ButtonSubmit type="submit">Log in</ButtonSubmit>
-          
+          <ContainerNewAccount>
+            <p>
+              Don't have account yet?<Link to="/register">Create Account</Link>
+            </p>
+          </ContainerNewAccount>
         </Form>
       </ContainerForm>
       <ContainerFoto>

@@ -123,7 +123,6 @@ export const IconeSenha = styled.button`
   }
 `;
 
-
 export const Input = styled.input`
   width: 100%;
   padding: ${({ theme }) => theme.spacing.medium};
@@ -149,5 +148,44 @@ export const ButtonSubmit = styled.button`
   }
 `;
 
-export const ContainerNewAccount = styled.div``;
+export const ContainerRememberMe = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-top: ${({ theme }) => theme.spacing.small};
 
+  input {
+    margin-right: 0.5rem;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export const ContainerNewAccount = styled.div`
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: ${({ theme }) => theme.spacing.medium};
+
+  p {
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
