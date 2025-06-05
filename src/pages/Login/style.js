@@ -7,7 +7,7 @@ export const ContainerPrincipal = styled.section`
   height: 100vh;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+
   gap: 10rem;
   background-color: ${({ theme }) => theme.colors.background};
 `;
@@ -86,8 +86,48 @@ export const Divider = styled.div`
   }
 `;
 
+export const CampoInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+`;
+
+export const LabelEstilizada = styled.label`
+  font-size: 0.75rem;
+`;
+
+export const InputContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const IconeSenha = styled.button`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  svg {
+    font-size: 20px;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+
 export const Input = styled.input`
+  width: 100%;
   padding: ${({ theme }) => theme.spacing.medium};
+  padding-right: 40px; /* Espaço para o ícone */
   border: none;
   background-color: ${({ theme }) => theme.colors.inputs};
   border-radius: 4px;
@@ -108,3 +148,6 @@ export const ButtonSubmit = styled.button`
     background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
+
+export const ContainerNewAccount = styled.div``;
+
