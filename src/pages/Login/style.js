@@ -4,9 +4,11 @@ export const ContainerPrincipal = styled.section`
   display: flex;
   margin: 0 auto;
   max-width: 75rem;
-  min-height: 100vh;
+  height: 100vh;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 10rem;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -19,7 +21,7 @@ export const ContainerForm = styled.div`
 export const ContainerFoto = styled.div`
   img {
     width: 100%;
-    max-width: 500px;
+    min-width: 350px;
   }
 `;
 
