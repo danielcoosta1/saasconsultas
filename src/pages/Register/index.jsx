@@ -18,6 +18,7 @@ import {
   ContainerIcones,
   ButtonGoHome,
   ImagemSucesso,
+  ContainerSuperior,
 } from "./style";
 
 import registerImg from "../../assets/register.png";
@@ -59,8 +60,10 @@ const Register = () => {
         <>
           <ContainerForm>
             <Form onSubmit={handleSubmit}>
-              <img src={logomarca} />
-              <Title>Sign Up</Title>
+              <ContainerSuperior>
+                <img src={logomarca} />
+                <Title>Sign up</Title>
+              </ContainerSuperior>
               <ContainerBt>
                 <ButtonLogin>
                   <img src={logoGoogle} />

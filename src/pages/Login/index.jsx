@@ -15,6 +15,7 @@ import {
   InputContainer,
   ContainerNewAccount,
   ContainerRememberMe,
+  ContainerSuperior,
 } from "./style";
 
 import loginImg from "../../assets/login.png";
@@ -47,8 +48,10 @@ const Login = () => {
     <ContainerPrincipal>
       <ContainerForm>
         <Form onSubmit={handleSubmit}>
-          <img src={logomarca} />
-          <Title>Log in</Title>
+          <ContainerSuperior>
+            <img src={logomarca} />
+            <Title>Log in</Title>
+          </ContainerSuperior>
           <ContainerBt>
             <ButtonLogin>
               <img src={logoGoogle} />
@@ -97,7 +100,8 @@ const Login = () => {
           <ButtonSubmit type="submit">Log in</ButtonSubmit>
           <ContainerNewAccount>
             <p>
-              Don't have account yet ? <Link to="/register">Create Account</Link>
+              Don't have account yet ?{" "}
+              <Link to="/register">Create Account</Link>
             </p>
           </ContainerNewAccount>
         </Form>

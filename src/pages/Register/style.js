@@ -18,6 +18,17 @@ export const ContainerForm = styled.div`
   align-items: center;
 `;
 
+export const ContainerSuperior = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+img{
+    max-width: 92px;
+}
+`;
+
 export const ContainerFoto = styled.div`
   img {
     width: 100%;
@@ -40,6 +51,7 @@ export const Title = styled.h2`
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.colors.text};
   text-align: center;
+ 
 `;
 
 export const ContainerBt = styled.div`

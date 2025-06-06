@@ -11,7 +11,16 @@ export const ContainerPrincipal = styled.section`
   gap: 10rem;
   background-color: ${({ theme }) => theme.colors.background};
 `;
+export const ContainerSuperior = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  img {
+    max-width: 92px;
+  }
+`;
 export const ContainerForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,6 +43,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.medium};
+
+  img {
+    max-width: 92px;
+  }
 `;
 
 export const Title = styled.h2`
