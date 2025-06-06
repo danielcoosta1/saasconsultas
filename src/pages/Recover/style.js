@@ -24,38 +24,35 @@ export const ContainerRecover = styled.form`
   align-items: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xxlarge};
-
 `;
 export const ContainerSuperior = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-img{
+  img {
     max-width: 92px;
-}
+  }
 `;
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.colors.text};
   text-align: center;
- 
 `;
 
 export const CampoInput = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
+
+  justify-content: center;
   gap: 0.5em;
+  padding: 0 2rem;
 `;
 
 export const LabelEstilizada = styled.label`
   font-size: 0.75rem;
-`;
-
-export const InputContainer = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 export const Input = styled.input`
@@ -77,7 +74,8 @@ export const ButtonSubmit = styled.button`
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  width: 300px;
+  margin-top: 2rem;
+  
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};

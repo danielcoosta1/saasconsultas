@@ -7,7 +7,6 @@ import {
   ContainerRecover,
   ContainerSuperior,
   Input,
-  InputContainer,
   LabelEstilizada,
   Title,
 } from "./style";
@@ -36,19 +35,18 @@ const Recover = () => {
         </ContainerSuperior>
 
         <CampoInput>
-          <LabelEstilizada>Password</LabelEstilizada>
-          <InputContainer>
-            <Input
-              type={email}
-              id="email"
-              placeholder="exemple@gmail.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </InputContainer>
+          <LabelEstilizada>Email adress</LabelEstilizada>
+
+          <Input
+            type={email}
+            id="email"
+            placeholder="exemple@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {erro && <p style={{ color: "red" }}>{erro}</p>}
+          <ButtonSubmit type="submit">Reset your password</ButtonSubmit>
         </CampoInput>
-        {erro && <p style={{ color: "red" }}>{erro}</p>}
-        <ButtonSubmit type="submit">Reset your password</ButtonSubmit>
       </ContainerRecover>
     </ContainerPrincipal>
   );
