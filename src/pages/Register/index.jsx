@@ -130,7 +130,7 @@ const Register = () => {
             </ContainerIcones>
             <h2>Your account successfully created</h2>
             <ButtonGoHome>
-              <Link>Go to home</Link>
+              <Link to="/">Go to home</Link>
             </ButtonGoHome>
           </ContainerSucess>
         </>
