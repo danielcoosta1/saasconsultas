@@ -17,6 +17,7 @@ import {
   ContainerSucess,
   ContainerIcones,
   ButtonGoHome,
+  ImagemSucesso,
 } from "./style";
 
 import registerImg from "../../assets/register.png";
@@ -124,6 +125,7 @@ const Register = () => {
         <>
           <ContainerSucess>
             <ContainerIcones>
+              <ImagemSucesso src={sucess} alt="Success" />
               <img src={thumbsUp} />
             </ContainerIcones>
             <h2>Your account successfully created</h2>

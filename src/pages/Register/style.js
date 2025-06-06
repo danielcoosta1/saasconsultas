@@ -180,9 +180,14 @@ export const ContainerSucess = styled.div`
   align-items: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xxlarge};
+
+  h2{
+    font-weight: 500;
+  }
 `;
 
 export const ContainerIcones = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.background};
@@ -190,8 +195,17 @@ export const ContainerIcones = styled.div`
   padding: 3em;
   img {
     object-fit: cover;
-    max-width: 78px;
+
   }
+`;
+
+export const ImagemSucesso = styled.img`
+  position: absolute;
+  top: -10px; /* Ajuste esse valor conforme a altura da imagem desejada */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  /* Ajuste o tamanho conforme necessário */
 `;
 
 export const ButtonGoHome = styled.button`
@@ -203,13 +217,14 @@ export const ButtonGoHome = styled.button`
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  width: 169px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
   }
 
   a {
-     color: #fff;
+    color: #fff;
     text-decoration: none;
   }
 `;
