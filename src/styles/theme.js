@@ -15,6 +15,8 @@ export const theme = {
     small: "8px",
     medium: "16px",
     large: "24px",
+    xlarge: "32px",
+    xxlarge: "40px",
   },
   // Outros tokens de design podem ser adicionados aqui.
 };
