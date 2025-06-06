@@ -167,3 +167,49 @@ export const ContainerLogin = styled.div`
     }
   }
 `;
+
+export const ContainerSucess = styled.div`
+  background: #fff;
+  padding: ${({ theme }) => theme.spacing.large};
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.xxlarge};
+`;
+
+export const ContainerIcones = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.background};
+  border-radius: 50%;
+  padding: 3em;
+  img {
+    object-fit: cover;
+    max-width: 78px;
+  }
+`;
+
+export const ButtonGoHome = styled.button`
+  padding: ${({ theme }) => theme.spacing.medium};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  a {
+     color: #fff;
+    text-decoration: none;
+  }
+`;
