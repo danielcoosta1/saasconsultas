@@ -97,7 +97,7 @@ const Login = () => {
           <ButtonSubmit type="submit">Log in</ButtonSubmit>
           <ContainerNewAccount>
             <p>
-              Don't have account yet?<Link to="/register">Create Account</Link>
+              Don't have account yet ? <Link to="/register">Create Account</Link>
             </p>
           </ContainerNewAccount>
         </Form>
