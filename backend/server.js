@@ -1,6 +1,10 @@
 import express from "express";
 import cors from "cors";
 import { PrismaClient } from "@prisma/client";
+
+import cadastroRouter from "./routes/cadastro.js";
+import loginRouter from "./routes/login.js";
+
 /* global process */
 
 const app = express();
@@ -10,10 +14,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-prisma.$connect()
-  .then(() => console.log('Conexão com o banco de dados estabelecida.'))
+prisma
+  .$connect()
+  .then(() => console.log("Conexão com o banco de dados estabelecida."))
   .catch((error) => {
-    console.error('Erro ao conectar com o banco de dados:', error);
+    console.error("Erro ao conectar com o banco de dados:", error);
     process.exit(1);
   });
 
@@ -22,7 +27,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Servidor rodando 🚀" });
 });
 
+// Montando as rotas de autenticação:
+app.use("/cadastro", cadastroRouter);
+app.use("/login", loginRouter);
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
