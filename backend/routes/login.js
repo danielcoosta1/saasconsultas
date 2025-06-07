@@ -26,7 +26,12 @@ router.post("/", async (req, res) => {
       expiresIn: "7d",
     });
 
-    res.json({ id: usuario.id, nome: usuario.nome, email: usuario.email });
+    res.json({
+      id: usuario.id,
+      nome: usuario.nome,
+      email: usuario.email,
+      token,
+    });
   } catch (error) {
     console.error("Erro no login:", error);
     res.status(500).json({ erro: "Erro interno no servidor." });

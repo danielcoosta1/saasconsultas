@@ -33,6 +33,7 @@ router.post("/", async (req, res) => {
       id: novoUsuario.id,
       nome: novoUsuario.nome,
       email: novoUsuario.email,
+      token
     });
   } catch (error) {
     console.error("Erro no cadastro:", error);
