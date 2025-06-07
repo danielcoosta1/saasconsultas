@@ -17,9 +17,20 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/auth/AuthProvider";
 import RotaPrivada from "./components/RotaPrivada";
 
+import { ToastContainer } from "react-toastify";
+
 const App = () => {
   return (
     <Router>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
       <AuthProvider>
         <Routes>
           {/* Rotas Públicas */}
