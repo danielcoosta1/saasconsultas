@@ -15,6 +15,7 @@ import Profile from "./pages/Profile";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/auth/AuthProvider";
+import RotaPrivada from "./components/RotaPrivada";
 
 const App = () => {
   return (
@@ -27,16 +28,18 @@ const App = () => {
           <Route path="/recover" element={<Recover />} />
 
           {/* Rotas Protegidas com o layout de menu lateral */}
-          <Route path="/" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="analytics" element={<Analytics />} />
-            <Route path="Schedule" element={<Schedule />} />
-            <Route path="calendar" element={<Calendar />} />
+          <Route element={<RotaPrivada />}>
+            <Route path="/" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="Schedule" element={<Schedule />} />
+              <Route path="calendar" element={<Calendar />} />
 
-            {/* Rotas adicionais conforme o roadmap */}
-            <Route path="notifications" element={<Notifications />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="profile" element={<Profile />} />
+              {/* Rotas adicionais conforme o roadmap */}
+              <Route path="notifications" element={<Notifications />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="profile" element={<Profile />} />
+            </Route>
           </Route>
 
           {/* Rota para páginas não encontradas */}
