@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { PrismaClient } from "@prisma/client";
 /* global process */
+
 const router = express.Router();
 const prisma = new PrismaClient();
 router.post("/", async (req, res) => {
