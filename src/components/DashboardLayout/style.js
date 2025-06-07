@@ -6,12 +6,6 @@ export const LayoutContainer = styled.div`
   min-height: 100vh;
 `;
 
-export const Sidebar = styled.aside`
-  width: 250px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: #fff;
-  padding: ${({ theme }) => theme.spacing.large};
-`;
 
 export const Content = styled.main`
   flex: 1;
