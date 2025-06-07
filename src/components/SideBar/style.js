@@ -15,11 +15,13 @@ export const Sidebar = styled.aside`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 0;
+    margin-right: 2rem;
+    
   }
   nav ul {
     list-style: none;
-    padding: 0;
-    padding: 0;
+    
     width: 100%;
   }
 
@@ -33,7 +35,7 @@ export const Sidebar = styled.aside`
     gap: 0.5rem;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.text2};
-    font-size: 1.25rem;
+    font-size: 1rem;
     transition: color 0.3s;
     font-weight: 600;
   }
@@ -88,7 +90,7 @@ export const ContainerPerfil = styled.div`
   }
 
   span {
-    font-size: .85rem;
+    font-size: .65rem;
     color: ${({ theme }) => theme.colors.text};
     font-weight: 500;
   }
