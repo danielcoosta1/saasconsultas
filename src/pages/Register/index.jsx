@@ -128,7 +128,7 @@ const Register = () => {
               </CampoInput>
 
               {erro && <p style={{ color: "red" }}>{erro}</p>}
-              <ButtonSubmit type="submit">Log in</ButtonSubmit>
+              <ButtonSubmit type="submit">Create account</ButtonSubmit>
               <ContainerLogin>
                 <p>
                   Already have an account ? <Link to="/login">Log in</Link>
