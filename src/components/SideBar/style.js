@@ -50,6 +50,7 @@ export const ContainerLogo = styled.div`
   align-items: center;
   justify-content: center;
   margin-left:-2rem;
+  cursor: pointer;
 
   color: ${({ theme }) => theme.colors.text};
 

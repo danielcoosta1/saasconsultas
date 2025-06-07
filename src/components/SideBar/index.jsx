@@ -1,7 +1,7 @@
 // src/components/SideBar.jsx
 
 import { ContainerLogo, Sidebar } from "./style";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // Exemplo de ícones. Você pode escolher os que melhor representam cada rota.
 import {
   MdDashboard,
@@ -15,9 +15,11 @@ import {
 import logomarca from "../../assets/logomarca.png";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+
   return (
     <Sidebar>
-      <ContainerLogo>
+      <ContainerLogo onClick={() => navigate("/")}>
         <img src={logomarca} />
         <h2>Consultare</h2>
       </ContainerLogo>
