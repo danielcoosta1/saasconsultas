@@ -43,15 +43,31 @@ const Register = () => {
   const [erro, setErro] = useState("");
   const [cadastroSucesso, setCadastroSucesso] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !senha) {
-      setErro("Por favor, preencha todos os campos.");
-      return;
+    setErro("");
+
+    try {
+      const resposta = await fetch(
+        `${import.meta.env.VITE_API_URL}/cadastro`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, senha }),
+        }
+      );
+
+      const dados = await resposta.json();
+
+      if (!resposta.ok) {
+        throw new Error(dados.erro || "Erro ao cadastrar");
+      }
+
+      setCadastroSucesso(true); // Mostrar mensagem ao invés de redirecionar
+    } catch (err) {
+      console.error("Erro no cadastro:", err.message);
+      setErro(err.message);
     }
-    // Aqui você integrará com seu endpoint de login futuramente.
-    console.log("Tentando logar com:", { email, senha });
-    setCadastroSucesso(true); // Mostrar mensagem ao invés de redirecionar
   };
 
   return (

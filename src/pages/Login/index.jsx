@@ -26,22 +26,40 @@ import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toastErro, toastSucesso } from "../../utils/toast";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
+  const { login } = useAuth();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
   const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !senha) {
-      setErro("Por favor, preencha todos os campos.");
-      return;
+    setErro("");
+    setCarregando(true);
+
+    try {
+      await login({ email, senha });
+      toastSucesso("Login efetuado com sucesso");
+      navigate(from, { replace: true });
+    } catch (err) {
+      console.error("Erro ao fazer login:", err.message);
+      setErro("E-mail ou senha inválidos.");
+      toastErro("E-mail ou senha inválidos.");
+    } finally {
+      setCarregando(false);
     }
-    // Aqui você integrará com seu endpoint de login futuramente.
-    console.log("Tentando logar com:", { email, senha });
   };
 
   return (
@@ -97,7 +115,9 @@ const Login = () => {
           </ContainerRememberMe>
 
           {erro && <p style={{ color: "red" }}>{erro}</p>}
-          <ButtonSubmit type="submit">Log in</ButtonSubmit>
+          <ButtonSubmit type="submit" disabled={carregando}>
+            {carregando ? <>🔄 Loading...</> : "Log in"}
+          </ButtonSubmit>
           <ContainerNewAccount>
             <p>
               Don't have account yet ?{" "}
