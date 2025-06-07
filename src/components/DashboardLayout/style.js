@@ -9,6 +9,6 @@ export const LayoutContainer = styled.div`
 
 export const Content = styled.main`
   flex: 1;
-  padding: ${({ theme }) => theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.xxlarge};
   background-color: ${({ theme }) => theme.colors.background};
 `;
