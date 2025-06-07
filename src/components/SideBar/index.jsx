@@ -1,6 +1,7 @@
 // src/components/SideBar.jsx
 
-import { ContainerLogo, Sidebar } from "./style";
+import { ContainerLogo, ContainerPerfil, Sidebar } from "./style";
+import { useAuth } from "../../hooks/useAuth";
 import { NavLink, useNavigate } from "react-router-dom";
 // Exemplo de ícones. Você pode escolher os que melhor representam cada rota.
 import {
@@ -10,12 +11,16 @@ import {
   MdCalendarToday,
   MdNotifications,
   MdSettings,
-  MdPerson,
 } from "react-icons/md";
+
+import { IoLogOut } from "react-icons/io5";
+
 import logomarca from "../../assets/logomarca.png";
 
 const SideBar = () => {
   const navigate = useNavigate();
+
+  const { usuario, logout } = useAuth();
 
   return (
     <Sidebar>
@@ -80,17 +85,23 @@ const SideBar = () => {
               Configurações
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/profile"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              <MdPerson size={20} />
-              Perfil
-            </NavLink>
-          </li>
         </ul>
       </nav>
+      <ContainerPerfil onClick={() => navigate("/profile")}>
+        {usuario && (
+          <>
+            {/* Se o usuário possuir foto, renderiza-a, ou coloca um placeholder */}
+            <img
+              src={usuario.foto || "https://picsum.photos/200/300"}
+              alt="Perfil"
+            />
+            <span>{usuario.name}</span>
+          </>
+        )}
+        <button onClick={logout}>
+          <IoLogOut size={25} />
+        </button>
+      </ContainerPerfil>
     </Sidebar>
   );
 };

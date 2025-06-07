@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Sidebar = styled.aside`
   width: 250px;
-
+  height: 100vh;
   background-color: ${({ theme }) => theme.colors.sidebarbg};
   display: flex;
   flex-direction: column;
@@ -11,11 +11,11 @@ export const Sidebar = styled.aside`
   box-sizing: border-box;
   padding: ${({ theme }) => theme.spacing.large};
 
- ul{
+  ul {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
- }
+  }
   nav ul {
     list-style: none;
     padding: 0;
@@ -49,7 +49,7 @@ export const ContainerLogo = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-left:-2rem;
+  margin-left: -2rem;
   cursor: pointer;
 
   color: ${({ theme }) => theme.colors.text};
@@ -65,10 +65,37 @@ export const ContainerLogo = styled.div`
     font-size: 1.25rem;
     margin-left: -1rem;
   }
-
 `;
 
+export const ContainerPerfil = styled.div`
+  width: 100%;
 
+  padding-top: ${({ theme }) => theme.spacing.medium};
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.small};
+  margin-top: auto;
+  cursor: pointer;
 
+  &:hover {
+    opacity: 0.9;
+  }
 
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
 
+  span {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: 500;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+  }
+`;
