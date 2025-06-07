@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 
     res.json({
       id: usuario.id,
-      nome: usuario.nome,
+      name: usuario.name,
       email: usuario.email,
       token,
     });

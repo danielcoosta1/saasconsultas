@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const { nome, email, senha } = req.body;
+  const { name, email, senha } = req.body;
 
   try {
     const usuarioExistente = await prisma.usuario.findUnique({
@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
     const senhaHash = await bcrypt.hash(senha, 10);
 
     const novoUsuario = await prisma.usuario.create({
-      data: { nome, email, senha: senhaHash },
+      data: { name, email, senha: senhaHash },
     });
     // Gerando Token
     const token = jwt.sign({ id: novoUsuario.id }, process.env.JWT_SECRET, {
@@ -31,9 +31,9 @@ router.post("/", async (req, res) => {
 
     res.status(201).json({
       id: novoUsuario.id,
-      nome: novoUsuario.nome,
+      name: novoUsuario.nome,
       email: novoUsuario.email,
-      token
+      token,
     });
   } catch (error) {
     console.error("Erro no cadastro:", error);
