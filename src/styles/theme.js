@@ -5,7 +5,8 @@ export const theme = {
     secondary: "#FF7043", // Usada de forma discreta para destaques
     background: "#F5F5F5", // Cor de fundo principal
     text: "#212121",
-    inputs: "#F7F7F8", // Cor padrão para textos
+    inputs: "#F7F7F8",
+    sidebarbg: "#fff" // Cor padrão para textos
   },
   fonts: {
     heading: '"Raleway", sans-serif',
