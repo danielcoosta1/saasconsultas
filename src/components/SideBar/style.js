@@ -88,7 +88,7 @@ export const ContainerPerfil = styled.div`
   }
 
   span {
-    font-size: 1rem;
+    font-size: .85rem;
     color: ${({ theme }) => theme.colors.text};
     font-weight: 500;
   }
@@ -97,5 +97,6 @@ export const ContainerPerfil = styled.div`
     border: none;
     background-color: transparent;
     margin-left: auto;
+    cursor: pointer;
   }
 `;
