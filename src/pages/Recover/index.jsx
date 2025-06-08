@@ -13,16 +13,38 @@ import {
 
 import logomarca from "../../assets/logomarca.png";
 import { useState } from "react";
+import { toastErro, toastSucesso } from "../../utils/toast";
 
 const Recover = () => {
   const [email, setEmail] = useState("");
   const [erro, setErro] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email) {
-      setErro("Por favor, digite o seu E-mail");
+      setErro("Por favor, digite o seu e-mail");
       return;
+    }
+
+    try {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${API_URL}/recover`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.erro || "Erro ao enviar solicitação.");
+      }
+
+      toastSucesso(
+        "E-mail de recuperação enviado! Verifique sua caixa de entrada."
+      );
+    } catch (error) {
+      toastErro(error.message);
     }
   };
 
