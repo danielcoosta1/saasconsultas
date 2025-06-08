@@ -7,7 +7,9 @@ import { PrismaClient } from "@prisma/client";
 
 import cadastroRouter from "./routes/cadastro.js";
 import loginRouter from "./routes/login.js";
-import recoverRouter from "./routes/recover.js"
+import recoverRouter from "./routes/recover.js";
+import resetPasswordRouter from "./routes/reset-password.js";
+
 /* global process */
 
 const app = express();
@@ -33,7 +35,8 @@ app.get("/", (req, res) => {
 // Montando as rotas de autenticação:
 app.use("/cadastro", cadastroRouter);
 app.use("/login", loginRouter);
-app.use("/recover", recoverRouter)
+app.use("/recover", recoverRouter);
+app.use("/reset-password", resetPasswordRouter);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
