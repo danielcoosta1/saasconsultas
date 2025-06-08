@@ -18,6 +18,7 @@ import { AuthProvider } from "./context/auth/AuthProvider";
 import RotaPrivada from "./components/RotaPrivada";
 
 import { ToastContainer } from "react-toastify";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
   return (
@@ -37,7 +38,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/recover" element={<Recover />} />
-
+          <Route path="/reset-password" element={<ResetPassword />} />
           {/* Rotas Protegidas com o layout de menu lateral */}
           <Route element={<RotaPrivada />}>
             <Route path="/" element={<DashboardLayout />}>
