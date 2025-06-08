@@ -10,8 +10,8 @@ export const theme = {
     sidebarbg: "#fff", // Cor padrão para textos
   },
   fonts: {
-    heading: '"Raleway", sans-serif',
-    body: '"Raleway", sans-serif',
+    heading: '"Nunito", sans-serif',
+    body: '"Nunito", sans-serif',
   },
   spacing: {
     small: "8px",
