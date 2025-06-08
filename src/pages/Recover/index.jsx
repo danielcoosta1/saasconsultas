@@ -14,10 +14,12 @@ import {
 import logomarca from "../../assets/logomarca.png";
 import { useState } from "react";
 import { toastErro, toastSucesso } from "../../utils/toast";
+import { useNavigate } from "react-router-dom";
 
 const Recover = () => {
   const [email, setEmail] = useState("");
   const [erro, setErro] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +45,8 @@ const Recover = () => {
       toastSucesso(
         "E-mail de recuperação enviado! Verifique sua caixa de entrada."
       );
+      // Redireciona para a página ResetPassword
+      navigate(`/reset-password`);
     } catch (error) {
       toastErro(error.message);
     }
