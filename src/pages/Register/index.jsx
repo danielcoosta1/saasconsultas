@@ -48,14 +48,11 @@ const Register = () => {
     setErro("");
 
     try {
-      const resposta = await fetch(
-        `${import.meta.env.VITE_API_URL}/cadastro`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, senha }),
-        }
-      );
+      const resposta = await fetch(`${import.meta.env.VITE_API_URL}/cadastro`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, senha }),
+      });
 
       const dados = await resposta.json();
 
@@ -82,10 +79,10 @@ const Register = () => {
               </ContainerSuperior>
               <ContainerBt>
                 <ButtonLogin>
-                  <img src={logoGoogle} />
+                  <img src={logoGoogle} type="button" />
                   Google
                 </ButtonLogin>
-                <ButtonLogin>
+                <ButtonLogin type="button">
                   <img src={logoFb} />
                   Facebook
                 </ButtonLogin>
@@ -121,7 +118,10 @@ const Register = () => {
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
                   />
-                  <IconeSenha onClick={() => setShowPassword(!showPassword)}>
+                  <IconeSenha
+                    onClick={() => setShowPassword(!showPassword)}
+                    type="button"
+                  >
                     {showPassword ? <IoEyeSharp /> : <FaEyeSlash />}
                   </IconeSenha>
                 </InputContainer>

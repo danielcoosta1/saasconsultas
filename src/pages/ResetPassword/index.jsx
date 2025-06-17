@@ -75,7 +75,10 @@ const ResetPassword = () => {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
-            <IconeSenha onClick={() => setShowPassword(!showPassword)}>
+            <IconeSenha
+              onClick={() => setShowPassword(!showPassword)}
+              type="button"
+            >
               {showPassword ? <IoEyeSharp /> : <FaEyeSlash />}
             </IconeSenha>
           </InputContainer>

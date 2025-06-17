@@ -71,11 +71,11 @@ const Login = () => {
             <Title>Log in</Title>
           </ContainerSuperior>
           <ContainerBt>
-            <ButtonLogin>
+            <ButtonLogin type="button">
               <img src={logoGoogle} />
               Google
             </ButtonLogin>
-            <ButtonLogin>
+            <ButtonLogin type="button">
               <img src={logoFb} />
               Facebook
             </ButtonLogin>
@@ -101,7 +101,10 @@ const Login = () => {
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />
-              <IconeSenha onClick={() => setShowPassword(!showPassword)}>
+              <IconeSenha
+                onClick={() => setShowPassword(!showPassword)}
+                type="button"
+              >
                 {showPassword ? <IoEyeSharp /> : <FaEyeSlash />}
               </IconeSenha>
             </InputContainer>
