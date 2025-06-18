@@ -19,10 +19,12 @@ import { useNavigate } from "react-router-dom";
 const Recover = () => {
   const [email, setEmail] = useState("");
   const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setCarregando(true);
     if (!email) {
       setErro("Por favor, digite o seu e-mail");
       return;
@@ -49,6 +51,8 @@ const Recover = () => {
       navigate(`/reset-password`);
     } catch (error) {
       toastErro(error.message);
+    } finally {
+      setCarregando(false);
     }
   };
 
@@ -71,7 +75,9 @@ const Recover = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           {erro && <p style={{ color: "red" }}>{erro}</p>}
-          <ButtonSubmit type="submit">Reset your password</ButtonSubmit>
+          <ButtonSubmit type="submit" disabled={carregando}>
+            {carregando ? <>🔄 Loading...</> : "Log in"}
+          </ButtonSubmit>
         </CampoInput>
       </ContainerRecover>
     </ContainerPrincipal>
